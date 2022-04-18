@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Nunito:wght@900&family=Taviraj:ital,wght@1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-size: 10px;
+}
+/*
+    font-family: 'Dosis', sans-serif;
+
+    font-family: 'Nunito', sans-serif;
+
+    font-family: 'Taviraj', serif;
+*/
+:root {
+    --color-primary:#003246;
+    --color-secondary:#22a6df;
+    --color-white:#dfe3e6;
+    --color-black:#051920;
+    --color-gray:#d4d4ce;
+    --color-gray1:#8c9ba5;
+    --color-gray2:#6e5a7a;
+}
+body{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: all .5s ease-in-out ;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+
+}
+header{
+    min-height: 100vh;
+    color: var(--color-white);
+    overflow: hidden;    
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    padding: 4rem 20rem;
+}
+
+.section{
+    transform: translateY(-100%) scale(0);
+    transition: all .5s ease-in-out;
+    background-color: var(--color-primary);
+
+}
+
+.sec1{
+    display: none;
+    transform: translateX(0) scale(1);
+}
+.sec2{
+    display: none;
+    transform: translateX(0) scale(1);
+}
+.sec3{
+    display: none;
+    transform: translateX(0) scale(1);
+}
+.sec4{
+    display: none;
+    transform: translateX(0) scale(1);
+}
+.sec5{
+    display: none;
+    transform: translateX(0) scale(1);
+}
+
+.active{
+    display: block;
+    animation: scaleAnim 1s each-in-out;
+    @keyframes scaleAnim{
+
+        0%{
+            transform: translateY(-100%) scaleY(0)
+        }
+
+        100%{
+            transform: translateY(0) scaleY(1)
+        }
+    }
+}
+
+/* Control */
+.controlls{
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    
+}
+.controlls .active-btn{
+    background-color: #ffd167 !important;
+    transition: all .5s ease-in-out;
+
+}
+.controlls .active-btn i{
+    color:brown !important;
+}
+.controlls .control{
+    padding: 2rem;
+    cursor: pointer;
+    background-color: var(--color-gray2);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem 0;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+  inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+.controlls .control i{
+    font-size: 3rem;
+    color: #22a6df;
+    pointer-events: none;
+}
+
+
+/* Header Content */
+.header-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+}
+.header-content .left-header{
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    position: relative;
+}
+.left-header .image{
+    background-color: #22a6df;
+    height: 100%;
+    width: 100%;
+    margin-left: 4rem;
+    border-radius: 15px;
+    transition: all .5s ease-in-out;
+}
+.left-header .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
+    filter: grayscale(100%);
+}
+.left-header .image img:hover{
+    filter: grayscale(0);
+}
+
+.header-content .right-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20rem;
+}
+.header-content .right-header .name{
+    font-size: 4rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+
+}
+.header-content .right-header .name span{
+    font-size: 4rem;
+    color: #22a6df;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+.header-content .right-header p{
+    margin: 2rem 0;
+    line-height: 3rem;
+    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: #22a6df;
+    font-weight: bold;
+
+}
+.btn-container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-btn{
+    color: #d4d4ce;
+    border:  1px solid var(--color-secondary);
+    position: relative;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.main-btn .btn-text{
+    padding: 2rem 2rem;
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+}
+.main-btn .btn-icon i{
+    font-size: 3rem;
+    color: var(--color-black);
+    cursor: pointer;
+    background-color: #ffd167;
+    padding: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+  inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+  transition: .6s ease-in-out;
+  margin-right: 10px;
+}
+.main-btn .btn-icon i:hover{
+    background-color: green;
+    color: #fff;
+}
+
+
+
+.main-title{
+    text-align: center;
+}
+.main-title h2{
+    position: relative;
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: 'Dosis', sans-serif;
+}
+.main-title span{
+    font-size: 5rem;
+    color: #22a6df;
+}
+
+/* About */
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+.about-container .right-about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+}
+.right-about .about-item{
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+
+}
+.right-about .about-item:hover{
+    cursor: default;
+    transform: translateY(-5px);
+    border:  1px solid purple;
+}
+.right-about .about-item .abt-text{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.right-about .about-item .abt-text .large-text{
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    color: #22a6df;
+}
+.right-about .about-item .abt-text .small-text{
+    padding-left: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+}
+.right-about .about-item .abt-text span{
+    font-size: 2rem;
+    font-weight: bold;
+    color: purple;
+}
+.left-about{
+    padding-right: 5rem;
+}
+.left-about p{
+    line-height: 3rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+    color: #22a6df;
+}
+.left-about h4{
+    font-size: 4rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+.left-about h4 span{
+    color: purple;
+    font-size: 4rem;
+}
+
+.about-stats{
+    padding-bottom: 4rem;
+}
+.about-stats .stat-title{
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+    color: purple;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    position: relative;
+}
+.about-stats .stat-title span{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+.about-stats .progress-bars{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+.about-stats .progress-bars .progress-bar{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-stats .progress-bars .progress-bar .progress-title{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+}
+.about-stats .progress-bars .progress-bar .progress-container{
+    display: flex;
+    align-items: center ;
+}
+.about-stats .progress-bars .progress-bar .progress-container .prog-text{
+    color: purple;
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+}
+.about-stats .progress{
+    width: 100%;
+    height: .45rem;
+    background-color:var(--color-secondary);
+    border-radius: 20px;
+    margin-left: 1rem;
+    position: relative;
+
+}
+.about-stats .progress span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: purple;
+    border-radius: 20px;
+    transition: all .5s ease-in-out;
+    width: 75%;
+}
+.about-stats .progress .html{
+    width: 85%;
+}
+.about-stats .progress .css{
+    width: 75%;
+}
+.about-stats .progress .javascript{
+    width: 60%;
+}
+.about-stats .progress .python{
+    width: 90%;
+}
+.about-stats .progress .react{
+    width: 80%;
+}
+.about-stats .progress .flutter{
+    width: 65%;
+}
+
+
+
+
+/* Portfolio */
+.port-text{
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bolder;
+
+}
+.portfolios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+}
+.portfolio-item{
+    position: relative;
+
+}
+.portfolio-item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.hover-item{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .5s ease-in-out;
+}
+.hover-item h3{
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+.hover-item .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.hover-item .icons i{
+    background-color: #6e5a7a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2rem;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+  inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+.hover-item .icons i:hover{
+    background-color: var(--color-primary);
+}
+.portfolio-item:hover .hover-item{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Blogs */
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+}
+.blog{
+    position: relative;
+    background-color: var(--color-grey-5);
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px rgba(0,0,0,.1);
+    transition: all .4s ease-in-out;
+}
+.blog:hover{
+    box-shadow: 1px 1px 20px rgba(0,0,0,.3);
+    transform: translateY(-5px);
+    transition: all .4s ease-in-out;
+}
+.blog:hover img{
+    filter: grayscale(0);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+}
+.blog img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    filter: grayscale(100%);
+    transition: all .4s ease-in-out;
+}
+.blog .blog-text{
+    margin-top: -7px;
+    padding: 1.1rem;
+    border-top: 8px solid var(--color-secondary);
+}
+.blog .blog-text h4{
+    font-size: 3rem;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: .7rem;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+.blog .blog-text h4:hover{
+    color: var(--color-secondary);
+}
+
+.blog .blog-text p{
+    color: var(--color-grey-2);
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+/* Contact */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.form{
+    width: 100%;
+    max-width: 1100px;
+    height: 700px;
+    background-color: purple;
+    border-radius: 10px;
+    z-index: 1000;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.contact-info{
+    background-color:var(--color-gray2);
+}
+.contact-form{
+    background-color:var(--color-black);
+    position: relative;
+}
+.circle{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, transparent 20%,#22a6df);
+    position:absolute;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+.circle.one{
+    width:130px;
+    height:130px;
+    top: 130px;
+    right: -40px;
+}
+.circle.two{
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 30px;
+}
+.contact-form::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color:#22a6df;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    top: 50px;
+    left: -13px;
+
+    
+}
+form{
+    padding: 2.3rem 2.2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+    
+}
+.title{
+    color: #fff;
+    font-weight: bold;
+    font-size: 4rem;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1;
+    margin-bottom: 4rem;
+    
+
+}
+.title span{
+    font-size: 4rem;
+    font-weight: bold;
+    color: #22a6df;
+}
+.input-container{
+    position: relative;
+    margin: 1rem 0;
+
+}
+
+.input{
+    width: 100%;
+    outline: none;
+    border: 2px solid purple;
+    background: none;
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    color: #22a6df;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 0.2px;
+    border-radius: 30px;
+    transition: .5s ease-in-out;
+
+}
+textarea.input{
+    padding: 1rem 2rem;
+    min-height: 150px;
+    border-radius: 22px;
+    resize: none ;
+    overflow-y: auto;
+
+}
+.input-container label .color{
+    font-size: 2rem;
+    color: #22a6df;
+    font-weight: bold;
+}
+.input-container.textarea label{
+    top: 1rem;
+     transform: translateY(0);
+}
+.btn{
+    padding: 1rem 4rem;
+    background: transparent;
+    border: 2px solid #22a6df;
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 20px;
+    transition: .6s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #22a6df;
+    border: 2px solid #fff;
+}
+
+.information .icon i{
+    font-size: 40px;
+    color: #fff;
+}
+.contact-info .title{
+    padding-top: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #22a6df;
+}
+.contact-info .text{
+    font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
+    padding: 0px 10px;
+    text-align: center;
+}
+.information{
+    display: flex;
+    padding: 20px;
+}
+.information p{
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: #22a6df;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.information p:hover{
+    color: #ffd167;
+}
+.social-media h2{
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    padding-top: 20px;
+
+}
+.social-icon .hello i{
+    font-size: 40px;
+    padding: 2px 20px;
+    padding-top: 20px;
+}
+.social-icon{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
